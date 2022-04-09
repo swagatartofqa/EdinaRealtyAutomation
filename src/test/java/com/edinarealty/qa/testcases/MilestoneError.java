@@ -13,13 +13,13 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
-public class VerifyBrokenImageTest extends TestBase {
+public class MilestoneError extends TestBase {
 
     //Define Variable(s)
     SoftAssert checkpoint;
 
     //Constructor
-    public VerifyBrokenImageTest() {
+    public MilestoneError() {
         super();
     }
 
@@ -35,7 +35,7 @@ public class VerifyBrokenImageTest extends TestBase {
         //Setup PageFactory
         loginPageMethods = new LoginPageMethods(eDriver, reportLogger);
         searchPageMethods = new SearchPageMethods(eDriver, reportLogger, excelMethods);
-        brokenlinksAndImage =new BrokenlinksAndImage(eDriver,reportLogger);
+        brokenlinksAndImage = new BrokenlinksAndImage(eDriver,reportLogger);
     }
 
     //Setup variable(s) and other info for the class
@@ -46,12 +46,12 @@ public class VerifyBrokenImageTest extends TestBase {
         genMethods = new GeneralMethods();
         excelMethods = new ExcelMethods();
         excelMethods.setDataTablePath(excelPath);
-        excelMethods.setSheetName("VerifyBrokenImage");
+        excelMethods.setSheetName("MilestoneError");
         column = 11;
     }
     //Test the login functionality
     @Test(dataProvider="inputs", dataProviderClass=ExcelMethods.class)
-    public void VerifyBrokenImage(String active, String reportTitle, String website, String accountType, String userid, String password, String multiFactorAuthentication, String expectedSuccessOrFailure, String expectedLoginName, String signout, String finalResult, String dataRow) {
+    public void VerifyMilestoneError(String active, String reportTitle, String website, String accountType, String userid, String password, String multiFactorAuthentication, String expectedSuccessOrFailure, String expectedLoginName, String signout, String finalResult, String dataRow) {
         System.out.println("@Test - loginTest()");
 
         //Initialize Variable(s)
@@ -85,8 +85,10 @@ public class VerifyBrokenImageTest extends TestBase {
                 //Verify if the failed login generated the expected error message
                 loginPageMethods.verifyFailedLoginErrorMessage(checkpoint);
             }
-
-            brokenlinksAndImage.verifyTopLinksHaveValidImages();
+            loginPageMethods.navigateToMilestonepage();
+            loginPageMethods.refreshPage(5);
+            brokenlinksAndImage.verifyAllBrokenLinks();
+            brokenlinksAndImage.verifyAllBrokenImages();
 
             //Attempt to logout, if desired
             if (signout.equalsIgnoreCase("y") || signout.equalsIgnoreCase("yes")) {

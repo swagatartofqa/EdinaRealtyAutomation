@@ -8,6 +8,7 @@ import java.net.MalformedURLException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
+import com.edinarealty.qa.pagemethods.BrokenlinksAndImage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -80,6 +81,7 @@ public class TestBase {
 	protected LoginPageMethods loginPageMethods;
 	protected SearchPageMethods searchPageMethods;
 	protected AccountPageMethods accountPageMethods;
+	protected BrokenlinksAndImage brokenlinksAndImage;
 	
 	public TestBase() {
 		try {
