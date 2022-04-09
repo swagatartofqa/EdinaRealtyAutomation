@@ -34,7 +34,7 @@ import io.restassured.path.json.JsonPath;
 
 public class GoogleAPI {
 	private static final String APPLICATION_NAME = "EdinaRealty";
-//	private static final JsonFactory JSON_FACTORY = JacksonFactory.getDefaultInstance();
+	//	private static final JsonFactory JSON_FACTORY = JacksonFactory.getDefaultInstance();
 	private static final JsonFactory JSON_FACTORY = GsonFactory.getDefaultInstance();
 	private static final String USER_ID = "me";
 	/*
@@ -44,18 +44,18 @@ public class GoogleAPI {
 	private static final List<String> SCOPES = Collections.singletonList(GmailScopes.MAIL_GOOGLE_COM);
 	private static final String CREDENTIALS_FILE_PATH =
 			System.getProperty("user.dir") +
-			File.separator + "src" +
-			File.separator + "main" +
-			File.separator + "resources" +
-			File.separator + "credentials" +
-			File.separator + "credentials.json";
-	
+					File.separator + "src" +
+					File.separator + "main" +
+					File.separator + "resources" +
+					File.separator + "credentials" +
+					File.separator + "credentials.json";
+
 	private static final String TOKENS_DIRECTORY_PATH = System.getProperty("user.dir") +
 			File.separator + "src" +
 			File.separator + "main" +
 			File.separator + "resources" +
 			File.separator + "credentials";
-	
+
 	/*
 	 * Creates an authorized Credential object.
 	 * @param HTTP_TRANSPORT The network HTTP Transport.
@@ -68,9 +68,9 @@ public class GoogleAPI {
 		if (in == null) {
 			throw new FileNotFoundException("Resource not found: " + CREDENTIALS_FILE_PATH);
 		}
-		
+
 		GoogleClientSecrets clientSecrets = GoogleClientSecrets.load(JSON_FACTORY, new InputStreamReader(in));
-		
+
 		//Build flow and trigger user authorization request.
 		GoogleAuthorizationCodeFlow flow = new GoogleAuthorizationCodeFlow.Builder(
 				HTTP_TRANSPORT, JSON_FACTORY, clientSecrets, SCOPES)
@@ -78,24 +78,24 @@ public class GoogleAPI {
 				.setAccessType("offline")
 				.build();
 		LocalServerReceiver receiver = new LocalServerReceiver.Builder().setPort(9999).build();
-		
+
 		return new AuthorizationCodeInstalledApp(flow, receiver).authorize("user");
 	}
-	
+
 	public static Gmail getService() throws IOException, GeneralSecurityException {
 		// Build a new authorized API client service.
 		final NetHttpTransport HTTP_TRANSPORT = GoogleNetHttpTransport.newTrustedTransport();
 		Gmail service = new Gmail.Builder(HTTP_TRANSPORT, JSON_FACTORY, getCredentials(HTTP_TRANSPORT))
 				.setApplicationName(APPLICATION_NAME)
 				.build();
-		
+
 		return service;
 	}
-	
+
 	public static List<Message> listMessagesMatchingQuery(Gmail service, String userId, String query) throws IOException {
 		ListMessagesResponse response = service.users().messages().list(userId).setQ(query).execute();
 		List<Message> messages = new ArrayList<Message>();
-		
+
 		while (response.getMessages() != null) {
 			messages.addAll(response.getMessages());
 			if (response.getNextPageToken() != null) {
@@ -106,15 +106,15 @@ public class GoogleAPI {
 				break;
 			}
 		}
-		
+
 		return messages;
 	}
-	
+
 	public static Message getMessage(Gmail service, String userId, List<Message> messages, int index) throws IOException {
 		Message message = service.users().messages().get(userId, messages.get(index).getId()).execute();
 		return message;
 	}
-	
+
 	public static HashMap<String, String> getGmailData(String query) {
 		try {
 			Gmail service = getService();
@@ -131,77 +131,77 @@ public class GoogleAPI {
 					link = s.trim();
 				}
 			}
-			
+
 			HashMap<String, String> hm = new HashMap<String, String>();
 			hm.put("subject", subject);
 			hm.put("body", body);
 			hm.put("link", link);
 			return hm;
 		} catch (Exception e) {
-			System.out.println("email not found....");
+			System.out.println("email not found...." + e.toString());
 			throw new RuntimeException(e);
 		}
 	}
-	
+
 	public static int getTotalCountOfMails() {
 		//Initialize Variable(s)
 		int size;
-		
+
 		try {
 			final NetHttpTransport HTTP_TRANSPORT = GoogleNetHttpTransport.newTrustedTransport();
 			Gmail service = new Gmail.Builder(HTTP_TRANSPORT, JSON_FACTORY, getCredentials(HTTP_TRANSPORT))
 					.setApplicationName(APPLICATION_NAME)
 					.build();
-			
+
 			List<Thread> threads = service.
 					users().
 					threads().
 					list("me").
 					execute().
 					getThreads();
-			
+
 			size = threads.size();
 		} catch (Exception e) {
 			System.out.println("Exception log " + e);
 			size = -1;
 		}
-		
+
 		return size;
 	}
-	
+
 	public static boolean isMailExist(String messageTitle) {
 		try {
 			final NetHttpTransport HTTP_TRANSPORT = GoogleNetHttpTransport.newTrustedTransport();
 			Gmail service = new Gmail.Builder(HTTP_TRANSPORT, JSON_FACTORY, getCredentials(HTTP_TRANSPORT))
 					.setApplicationName(APPLICATION_NAME)
 					.build();
-			
+
 			ListMessagesResponse response = service.
 					users().
 					messages().
 					list("me").
 					setQ("subject:" + messageTitle).
 					execute();
-			
+
 			List<Message> messages = getMessages(response);
-			
+
 			return messages.size() != 0;
 		} catch (Exception e) {
 			System.out.println("Exception log" + e);
 			return false;
 		}
 	}
-	
+
 	private static List<Message> getMessages(ListMessagesResponse response) {
 		//Initialize Variable(s)
 		List<Message> messages = new ArrayList<Message>();
-		
+
 		try {
 			final NetHttpTransport HTTP_TRANSPORT = GoogleNetHttpTransport.newTrustedTransport();
 			Gmail service = new Gmail.Builder(HTTP_TRANSPORT, JSON_FACTORY, getCredentials(HTTP_TRANSPORT))
 					.setApplicationName(APPLICATION_NAME)
 					.build();
-			
+
 			while (response.getMessages() != null) {
 				messages.addAll(response.getMessages());
 				if (response.getNextPageToken() != null) {
@@ -218,14 +218,23 @@ public class GoogleAPI {
 			return messages;
 		}
 	}
-	
-	public String getEmailBody() {
-		HashMap<String, String> hm = getGmailData("notifications");
+
+	public String getEmailBody(String query) {
+		HashMap<String, String> hm = getGmailData(query);
 		String emailBody = hm.get("body");
 		String verificationCode = emailBody.replaceAll("[^-?0-9]+", " ");
-		return verificationCode.strip().substring(0, 6);
+		return verificationCode.trim().substring(0, 6);
 	}
-	
+
+	public String getEmailBodyForMicrosoft(String query) {
+		HashMap<String, String> hm = getGmailData(query);
+		String emailBody = hm.get("body");
+		String verificationCode = emailBody.replaceAll("[^-?0-9]+", " ");
+		System.out.println(verificationCode);
+		System.out.println(verificationCode.substring(4, 12));
+		return verificationCode.substring(4, 12);
+	}
+
 	public static void main(String[] args) throws IOException, GeneralSecurityException {
 //		String tmp = getEmailBody();
 //		System.out.println(tmp);
@@ -243,5 +252,5 @@ public class GoogleAPI {
 //		System.out.println("=================");
 //		boolean exist = isMailExist("notifications");
 //		System.out.println("title exist or not: " + exist);
-    }
+	}
 }

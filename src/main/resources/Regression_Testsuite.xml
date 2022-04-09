@@ -58,6 +58,10 @@
 			<class name="com.edinarealty.qa.testcases.SignInTest"></class>
 			<class name="com.edinarealty.qa.testcases.SavedSearchTest"></class>
 			<class name="com.edinarealty.qa.testcases.SavedPropertiesTest"></class>
+			<class name="com.edinarealty.qa.testcases.SalesHistoryAndTaxSummaryTest"></class>
+			<class name="com.edinarealty.qa.testcases.VerifyBrokenLinksTest"></class>
+			<class name="com.edinarealty.qa.testcases.VerifyBrokenImageTest"></class>
+
 		</classes>
 	</test> 
 	
