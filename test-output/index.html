@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  <meta charset='utf-8'>
+  <title>TestNG reports</title>
+
+    <link type="text/css" href="testng-reports1.css" rel="stylesheet" id="ultra" />
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" id="retro" disabled="false"/>
+    <script type="text/javascript" src="jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="testng-reports.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      var suiteTableInitFunctions = new Array();
+      var suiteTableData = new Array();
+    </script>
+    <!--
+      <script type="text/javascript" src="jquery-ui/js/jquery-ui-1.8.16.custom.min.js"></script>
+     -->
+  </head>
+
+  <body>
+    <div class="top-banner-root">
+      <span class="top-banner-title-font">Test results</span>
+      <button class="button" id="button">Switch Retro Theme</button> <!-- button -->
+      <br/>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+    </div> <!-- top-banner-root -->
+    <div class="navigator-root">
+      <div class="navigator-suite-header">
+        <span>All suites</span>
+        <a href="#" class="collapse-all-link" title="Collapse/expand all the suites">
+          <img class="collapse-all-icon" src="collapseall.gif">
+          </img> <!-- collapse-all-icon -->
+        </a> <!-- collapse-all-link -->
+      </div> <!-- navigator-suite-header -->
+      <div class="suite">
+        <div class="rounded-window">
+          <div class="suite-header light-rounded-window-top">
+            <a href="#" class="navigator-link" panel-name="suite-TestSuite">
+              <span class="suite-name border-failed">TestSuite</span>
+            </a> <!-- navigator-link -->
+          </div> <!-- suite-header light-rounded-window-top -->
+          <div class="navigator-suite-content">
+            <div class="suite-section-title">
+              <span>Info</span>
+            </div> <!-- suite-section-title -->
+            <div class="suite-section-content">
+              <ul>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="test-xml-TestSuite">
+                    <span>Regression_Testsuite.xml</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="testlist-TestSuite">
+                    <span class="test-stats">1 test</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="group-TestSuite">
+                    <span>0 groups</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="times-TestSuite">
+                    <span>Times</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="reporter-TestSuite">
+                    <span>Reporter output</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="ignored-methods-TestSuite">
+                    <span>Ignored methods</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="chronological-TestSuite">
+                    <span>Chronological view</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+              </ul>
+            </div> <!-- suite-section-content -->
+            <div class="result-section">
+              <div class="suite-section-title">
+                <span>Results</span>
+              </div> <!-- suite-section-title -->
+              <div class="suite-section-content">
+                <ul>
+                  <li>
+                    <span class="method-stats">10 methods, 1 failed,  1 skipped,  8 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-TestSuite" class="hide-methods failed suite-TestSuite"> (hide)</a> <!-- hide-methods failed suite-TestSuite -->
+                      <a href="#" panel-name="suite-TestSuite" class="show-methods failed suite-TestSuite"> (show)</a> <!-- show-methods failed suite-TestSuite -->
+                    </span>
+                    <div class="method-list-content failed suite-TestSuite">
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-TestSuite" title="com.edinarealty.qa.testcases.SavedSearchTest" hash-for-method="savedSearchTest(Y, Saved Search Test, https://staging.edinarealtyv2.com/, Minnetonka, MN (City), $400,000, $600,000,...)">savedSearchTest(Y, Saved Search Test, https://staging.edinarealtyv2.com/, Minnetonka, MN (City), $400,000, $600,000,...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-TestSuite -->
+                  </li>
+                  <li>
+                    <span class="method-list-title skipped">Retried methods</span>
+                    <span class="show-or-hide-methods skipped">
+                      <a href="#" panel-name="suite-TestSuite" class="hide-methods skipped suite-TestSuite"> (hide)</a> <!-- hide-methods skipped suite-TestSuite -->
+                      <a href="#" panel-name="suite-TestSuite" class="show-methods skipped suite-TestSuite"> (show)</a> <!-- show-methods skipped suite-TestSuite -->
+                    </span>
+                    <div class="method-list-content skipped suite-TestSuite">
+                      <span>
+                        <img width="3%" src="skipped.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-TestSuite" title="com.edinarealty.qa.testcases.SavedSearchTest" hash-for-method="savedSearchTest(Y, Saved Search Test, https://staging.edinarealtyv2.com/, Minnetonka, MN (City), $400,000, $600,000,...)">savedSearchTest(Y, Saved Search Test, https://staging.edinarealtyv2.com/, Minnetonka, MN (City), $400,000, $600,000,...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content skipped suite-TestSuite -->
+                  </li>
+                  <li>
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-TestSuite" class="hide-methods passed suite-TestSuite"> (hide)</a> <!-- hide-methods passed suite-TestSuite -->
+                      <a href="#" panel-name="suite-TestSuite" class="show-methods passed suite-TestSuite"> (show)</a> <!-- show-methods passed suite-TestSuite -->
+                    </span>
+                    <div class="method-list-content passed suite-TestSuite">
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-TestSuite" title="com.edinarealty.qa.testcases.SignInTest" hash-for-method="SignInLocalTest(n, Signup Local  Account (MFA), https://staging.edinarealtyv2.com/, Local Account, Cynthia.Astralis@...)">SignInLocalTest(n, Signup Local  Account (MFA), https://staging.edinarealtyv2.com/, Local Account, Cynthia.Astralis@...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-TestSuite" title="com.edinarealty.qa.testcases.SignInTest" hash-for-method="SignInLocalTest(n, Signup Google Account (MFA), https://staging.edinarealtyv2.com/, Google Account, , null, null, nu...)">SignInLocalTest(n, Signup Google Account (MFA), https://staging.edinarealtyv2.com/, Google Account, , null, null, nu...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-TestSuite" title="com.edinarealty.qa.testcases.SignInTest" hash-for-method="SignInLocalTest(Y, Signup Local Account (Non-MFA), https://staging.edinarealtyv2.com/, Local Account, Cynthia+197@ar...)">SignInLocalTest(Y, Signup Local Account (Non-MFA), https://staging.edinarealtyv2.com/, Local Account, Cynthia+197@ar...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-TestSuite" title="com.edinarealty.qa.testcases.SignInTest" hash-for-method="SignInLocalTest(n, Signup Local Account (Non-MFA), https://staging.edinarealtyv2.com/, Local Account, test+1@artofqa...)">SignInLocalTest(n, Signup Local Account (Non-MFA), https://staging.edinarealtyv2.com/, Local Account, test+1@artofqa...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-TestSuite" title="com.edinarealty.qa.testcases.SignInTest" hash-for-method="SignInLocalTest(n, Signup Microsoft Account (MFA ), https://staging.edinarealtyv2.com/, Microsoft Account , null, nu...)">SignInLocalTest(n, Signup Microsoft Account (MFA ), https://staging.edinarealtyv2.com/, Microsoft Account , null, nu...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-TestSuite" title="com.edinarealty.qa.testcases.SavedPropertiesTest" hash-for-method="savedPropertiesTest(n, Saved Properties Test, https://staging.edinarealtyv2.com/, Minneapolis, MN (City), $300,000, $500...)">savedPropertiesTest(n, Saved Properties Test, https://staging.edinarealtyv2.com/, Minneapolis, MN (City), $300,000, $500...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-TestSuite" title="com.edinarealty.qa.testcases.SavedPropertiesTest" hash-for-method="savedPropertiesTest(Y, Saved Properties Test, https://staging.edinarealtyv2.com/, Minnetonka, MN (City), $400,000, $600,...)">savedPropertiesTest(Y, Saved Properties Test, https://staging.edinarealtyv2.com/, Minnetonka, MN (City), $400,000, $600,...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-TestSuite" title="com.edinarealty.qa.testcases.SavedSearchTest" hash-for-method="savedSearchTest(n, Saved Search Test, https://staging.edinarealtyv2.com/, Minneapolis, MN (City), $300,000, $500,000...)">savedSearchTest(n, Saved Search Test, https://staging.edinarealtyv2.com/, Minneapolis, MN (City), $300,000, $500,000...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-TestSuite -->
+                  </li>
+                </ul>
+              </div> <!-- suite-section-content -->
+            </div> <!-- result-section -->
+          </div> <!-- navigator-suite-content -->
+        </div> <!-- rounded-window -->
+      </div> <!-- suite -->
+    </div> <!-- navigator-root -->
+    <div class="wrapper">
+      <div class="main-panel-root">
+        <div panel-name="suite-TestSuite" class="panel TestSuite">
+          <div class="suite-TestSuite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">com.edinarealty.qa.testcases.SavedSearchTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="savedSearchTest(Y, Saved Search Test, https://staging.edinarealtyv2.com/, Minnetonka, MN (City), $400,000, $600,000,...)">
+                  </a> <!-- savedSearchTest(Y, Saved Search Test, https://staging.edinarealtyv2.com/, Minnetonka, MN (City), $400,000, $600,000,...) -->
+                  <span class="method-name">savedSearchTest</span>
+                  <span class="parameters">(Y, Saved Search Test, https://staging.edinarealtyv2.com/, Minnetonka, MN (City), $400,000, $600,000, 2, 2, Minnetonka, Minnetonka, Success - 2022/03/21 15:58:55, 1)</span>
+                  <div class="stack-trace">java.lang.Error: Unresolved compilation problem: 
+	The method strip() is undefined for the type String
+
+	at com.edinarealty.qa.pagemethods.SearchPageMethods.verifySavedSearchInfo(SearchPageMethods.java:524)
+	at com.edinarealty.qa.testcases.SavedSearchTest.savedSearchTest(SavedSearchTest.java:95)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+... Removed 18 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-TestSuite-class-failed -->
+          <div class="suite-TestSuite-class-skipped">
+            <div class="main-panel-header rounded-window-top">
+              <img src="skipped.png"/>
+              <span class="class-name">com.edinarealty.qa.testcases.SavedSearchTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="savedSearchTest(Y, Saved Search Test, https://staging.edinarealtyv2.com/, Minnetonka, MN (City), $400,000, $600,000,...)">
+                  </a> <!-- savedSearchTest(Y, Saved Search Test, https://staging.edinarealtyv2.com/, Minnetonka, MN (City), $400,000, $600,000,...) -->
+                  <span class="method-name">savedSearchTest</span>
+                  <span class="parameters">(Y, Saved Search Test, https://staging.edinarealtyv2.com/, Minnetonka, MN (City), $400,000, $600,000, 2, 2, Minnetonka, Minnetonka, Success - 2022/03/21 15:58:55, 1)</span>
+                  <div class="stack-trace">java.lang.Error: Unresolved compilation problem: 
+	The method strip() is undefined for the type String
+
+	at com.edinarealty.qa.pagemethods.SearchPageMethods.verifySavedSearchInfo(SearchPageMethods.java:524)
+	at com.edinarealty.qa.testcases.SavedSearchTest.savedSearchTest(SavedSearchTest.java:95)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+... Removed 18 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-TestSuite-class-skipped -->
+          <div class="suite-TestSuite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.edinarealty.qa.testcases.SignInTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="SignInLocalTest(n, Signup Local  Account (MFA), https://staging.edinarealtyv2.com/, Local Account, Cynthia.Astralis@...)">
+                  </a> <!-- SignInLocalTest(n, Signup Local  Account (MFA), https://staging.edinarealtyv2.com/, Local Account, Cynthia.Astralis@...) -->
+                  <span class="method-name">SignInLocalTest</span>
+                  <span class="parameters">(n, Signup Local  Account (MFA), https://staging.edinarealtyv2.com/, Local Account, Cynthia.Astralis@gmail.com, Akatsukimember1!, Y, Success, , n, Success - 2022/03/21 15:57:06, 3)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="SignInLocalTest(n, Signup Google Account (MFA), https://staging.edinarealtyv2.com/, Google Account, , null, null, nu...)">
+                  </a> <!-- SignInLocalTest(n, Signup Google Account (MFA), https://staging.edinarealtyv2.com/, Google Account, , null, null, nu...) -->
+                  <span class="method-name">SignInLocalTest</span>
+                  <span class="parameters">(n, Signup Google Account (MFA), https://staging.edinarealtyv2.com/, Google Account, , null, null, null, null, null, null, 4)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="SignInLocalTest(Y, Signup Local Account (Non-MFA), https://staging.edinarealtyv2.com/, Local Account, Cynthia+197@ar...)">
+                  </a> <!-- SignInLocalTest(Y, Signup Local Account (Non-MFA), https://staging.edinarealtyv2.com/, Local Account, Cynthia+197@ar...) -->
+                  <span class="method-name">SignInLocalTest</span>
+                  <span class="parameters">(Y, Signup Local Account (Non-MFA), https://staging.edinarealtyv2.com/, Local Account, Cynthia+197@artofqa.com, Akatsukimember1!, n, Success, Cynthia Ambrosia, n, Failure - 2022/03/21 15:57:05, 1)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="SignInLocalTest(n, Signup Local Account (Non-MFA), https://staging.edinarealtyv2.com/, Local Account, test+1@artofqa...)">
+                  </a> <!-- SignInLocalTest(n, Signup Local Account (Non-MFA), https://staging.edinarealtyv2.com/, Local Account, test+1@artofqa...) -->
+                  <span class="method-name">SignInLocalTest</span>
+                  <span class="parameters">(n, Signup Local Account (Non-MFA), https://staging.edinarealtyv2.com/, Local Account, test+1@artofqa.com, Test!123$, n, null, null, null, null, 2)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="SignInLocalTest(n, Signup Microsoft Account (MFA ), https://staging.edinarealtyv2.com/, Microsoft Account , null, nu...)">
+                  </a> <!-- SignInLocalTest(n, Signup Microsoft Account (MFA ), https://staging.edinarealtyv2.com/, Microsoft Account , null, nu...) -->
+                  <span class="method-name">SignInLocalTest</span>
+                  <span class="parameters">(n, Signup Microsoft Account (MFA ), https://staging.edinarealtyv2.com/, Microsoft Account , null, null, null, null, null, null, null, 5)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-TestSuite-class-passed -->
+          <div class="suite-TestSuite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.edinarealty.qa.testcases.SavedPropertiesTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="savedPropertiesTest(n, Saved Properties Test, https://staging.edinarealtyv2.com/, Minneapolis, MN (City), $300,000, $500...)">
+                  </a> <!-- savedPropertiesTest(n, Saved Properties Test, https://staging.edinarealtyv2.com/, Minneapolis, MN (City), $300,000, $500...) -->
+                  <span class="method-name">savedPropertiesTest</span>
+                  <span class="parameters">(n, Saved Properties Test, https://staging.edinarealtyv2.com/, Minneapolis, MN (City), $300,000, $500,000, 3, 3, 2, $381,075, MLS# 6103006, 11313 Brookview Road Woodbury, MN, 55129, 0, $451,995, MLS# 6102751, 16227 Fairoaks Avenue N Hugo, MN, 55038, 1, $409,900, MLS# 6103160, 15242 Tiger Street NW Ramsey, MN, 55303, , 2)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="savedPropertiesTest(Y, Saved Properties Test, https://staging.edinarealtyv2.com/, Minnetonka, MN (City), $400,000, $600,...)">
+                  </a> <!-- savedPropertiesTest(Y, Saved Properties Test, https://staging.edinarealtyv2.com/, Minnetonka, MN (City), $400,000, $600,...) -->
+                  <span class="method-name">savedPropertiesTest</span>
+                  <span class="parameters">(Y, Saved Properties Test, https://staging.edinarealtyv2.com/, Minnetonka, MN (City), $400,000, $600,000, 2, 2, 0, $503,365, MLS# 6102437, 12238 62nd Street NE Otsego, MN, 55301, 1, $451,995, MLS# 6102751, 16227 Fairoaks Avenue N Hugo, MN, 55038, 2, $409,900, MLS# 6103160, 15242 Tiger Street NW Ramsey, MN, 55303, Success - 2022/03/21 16:02:22, 1)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-TestSuite-class-passed -->
+          <div class="suite-TestSuite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.edinarealty.qa.testcases.SavedSearchTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="savedSearchTest(n, Saved Search Test, https://staging.edinarealtyv2.com/, Minneapolis, MN (City), $300,000, $500,000...)">
+                  </a> <!-- savedSearchTest(n, Saved Search Test, https://staging.edinarealtyv2.com/, Minneapolis, MN (City), $300,000, $500,000...) -->
+                  <span class="method-name">savedSearchTest</span>
+                  <span class="parameters">(n, Saved Search Test, https://staging.edinarealtyv2.com/, Minneapolis, MN (City), $300,000, $500,000, 3, 3, Minneapolis, Minneapolis, Success - 2022/03/21 16:00:53, 2)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-TestSuite-class-passed -->
+        </div> <!-- panel TestSuite -->
+        <div panel-name="test-xml-TestSuite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">/Users/johndang/eclipse_workspace/EdinaRealtyWeb_v2/src/main/resources/Regression_Testsuite.xml</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite thread-count=&quot;2&quot; guice-stage=&quot;DEVELOPMENT&quot; name=&quot;TestSuite&quot; parallel=&quot;tests&quot;&gt;
+  &lt;listeners&gt;
+    &lt;listener class-name=&quot;com.edinarealty.qa.analyzer.MyTransformer&quot;/&gt;
+    &lt;listener class-name=&quot;com.edinarealty.qa.util.Listeners&quot;/&gt;
+  &lt;/listeners&gt;
+  &lt;test thread-count=&quot;2&quot; name=&quot;Regression FireFox&quot; parallel=&quot;tests&quot;&gt;
+    &lt;parameter name=&quot;os&quot; value=&quot;OS X&quot;/&gt;
+    &lt;parameter name=&quot;browser&quot; value=&quot;firefox&quot;/&gt;
+    &lt;parameter name=&quot;dataTable&quot; value=&quot;/src/main/java/com/edinarealty/qa/testdata/EdinaRealityDataTable.xlsx&quot;/&gt;
+    &lt;parameter name=&quot;os_version&quot; value=&quot;Monterey&quot;/&gt;
+    &lt;parameter name=&quot;browserVersion&quot; value=&quot;latest&quot;/&gt;
+    &lt;parameter name=&quot;browserStack&quot; value=&quot;n&quot;/&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;com.edinarealty.qa.testcases.SignInTest&quot;/&gt;
+      &lt;class name=&quot;com.edinarealty.qa.testcases.SavedSearchTest&quot;/&gt;
+      &lt;class name=&quot;com.edinarealty.qa.testcases.SavedPropertiesTest&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Regression FireFox --&gt;
+&lt;/suite&gt; &lt;!-- TestSuite --&gt;
+            </pre>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="testlist-TestSuite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Tests for TestSuite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <ul>
+              <li>
+                <span class="test-name">Regression FireFox (3 classes)</span>
+              </li>
+            </ul>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="group-TestSuite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Groups for TestSuite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="times-TestSuite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Times for TestSuite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="times-div">
+              <script type="text/javascript">
+suiteTableInitFunctions.push('tableData_TestSuite');
+function tableData_TestSuite() {
+var data = new google.visualization.DataTable();
+data.addColumn('number', 'Number');
+data.addColumn('string', 'Method');
+data.addColumn('string', 'Class');
+data.addColumn('number', 'Time (ms)');
+data.addRows(10);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'savedSearchTest')
+data.setCell(0, 2, 'com.edinarealty.qa.testcases.SavedSearchTest')
+data.setCell(0, 3, 74262);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'savedSearchTest')
+data.setCell(1, 2, 'com.edinarealty.qa.testcases.SavedSearchTest')
+data.setCell(1, 3, 73191);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'savedPropertiesTest')
+data.setCell(2, 2, 'com.edinarealty.qa.testcases.SavedPropertiesTest')
+data.setCell(2, 3, 69959);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'SignInLocalTest')
+data.setCell(3, 2, 'com.edinarealty.qa.testcases.SignInTest')
+data.setCell(3, 3, 36003);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'savedSearchTest')
+data.setCell(4, 2, 'com.edinarealty.qa.testcases.SavedSearchTest')
+data.setCell(4, 3, 95);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'SignInLocalTest')
+data.setCell(5, 2, 'com.edinarealty.qa.testcases.SignInTest')
+data.setCell(5, 3, 61);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'SignInLocalTest')
+data.setCell(6, 2, 'com.edinarealty.qa.testcases.SignInTest')
+data.setCell(6, 3, 53);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'SignInLocalTest')
+data.setCell(7, 2, 'com.edinarealty.qa.testcases.SignInTest')
+data.setCell(7, 3, 48);
+data.setCell(8, 0, 8)
+data.setCell(8, 1, 'SignInLocalTest')
+data.setCell(8, 2, 'com.edinarealty.qa.testcases.SignInTest')
+data.setCell(8, 3, 44);
+data.setCell(9, 0, 9)
+data.setCell(9, 1, 'savedPropertiesTest')
+data.setCell(9, 2, 'com.edinarealty.qa.testcases.SavedPropertiesTest')
+data.setCell(9, 3, 32);
+window.suiteTableData['TestSuite']= { tableData: data, tableDiv: 'times-div-TestSuite'}
+return data;
+}
+              </script>
+              <span class="suite-total-time">Total running time: 4 minutes</span>
+              <div id="times-div-TestSuite">
+              </div> <!-- times-div-TestSuite -->
+            </div> <!-- times-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="reporter-TestSuite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Reporter output for TestSuite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="ignored-methods-TestSuite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">4 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">com.edinarealty.qa.testcases.SavedPropertiesTest</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">beforeTest</span>
+                <br/>
+                <span class="ignored-method-name">afterSuite</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">com.edinarealty.qa.testcases.SavedSearchTest</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">beforeTest</span>
+                <br/>
+                <span class="ignored-method-name">afterSuite</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="chronological-TestSuite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Methods in chronological order</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.edinarealty.qa.testcases.SignInTest</div> <!-- chronological-class-name -->
+              <div class="configuration-test before">
+                <span class="method-name">beforeTest(firefox, n, OS X, Monterey, latest)</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-test before -->
+              <div class="configuration-class before">
+                <span class="method-name">beforeClass(/src/main/java/com/edinarealty/qa/testdata/EdinaRealityDataTable.xlsx)</span>
+                <span class="method-start">5029 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <span class="method-name">SignInLocalTest(Y, Signup Local Account (Non-MFA), https://staging.edinarealtyv2.com/, Local Account, Cynthia+197@ar...)</span>
+                <span class="method-start">5793 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod([TestResult name=SignInLocalTest status=SUCCESS method=SignInTest.SignInLocalTest(java.lang.String, ...)</span>
+                <span class="method-start">41798 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">SignInLocalTest(n, Signup Local Account (Non-MFA), https://staging.edinarealtyv2.com/, Local Account, test+1@artofqa...)</span>
+                <span class="method-start">42243 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod([TestResult name=SignInLocalTest status=SUCCESS method=SignInTest.SignInLocalTest(java.lang.String, ...)</span>
+                <span class="method-start">42305 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">SignInLocalTest(n, Signup Local  Account (MFA), https://staging.edinarealtyv2.com/, Local Account, Cynthia.Astralis@...)</span>
+                <span class="method-start">42400 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod([TestResult name=SignInLocalTest status=SUCCESS method=SignInTest.SignInLocalTest(java.lang.String, ...)</span>
+                <span class="method-start">42454 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">SignInLocalTest(n, Signup Google Account (MFA), https://staging.edinarealtyv2.com/, Google Account, , null, null, nu...)</span>
+                <span class="method-start">42532 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod([TestResult name=SignInLocalTest status=SUCCESS method=SignInTest.SignInLocalTest(java.lang.String, ...)</span>
+                <span class="method-start">42576 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">SignInLocalTest(n, Signup Microsoft Account (MFA ), https://staging.edinarealtyv2.com/, Microsoft Account , null, nu...)</span>
+                <span class="method-start">42651 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod([TestResult name=SignInLocalTest status=SUCCESS method=SignInTest.SignInLocalTest(java.lang.String, ...)</span>
+                <span class="method-start">42700 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.edinarealty.qa.testcases.SavedSearchTest</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">beforeClass(/src/main/java/com/edinarealty/qa/testdata/EdinaRealityDataTable.xlsx)</span>
+                <span class="method-start">42764 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <span class="method-name">savedSearchTest(Y, Saved Search Test, https://staging.edinarealtyv2.com/, Minnetonka, MN (City), $400,000, $600,000,...)</span>
+                <span class="method-start">42789 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod([TestResult name=savedSearchTest status=SKIP method=SavedSearchTest.savedSearchTest(java.lang.String...)</span>
+                <span class="method-start">117055 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">savedSearchTest(Y, Saved Search Test, https://staging.edinarealtyv2.com/, Minnetonka, MN (City), $400,000, $600,000,...)</span>
+                <span class="method-start">117147 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod([TestResult name=savedSearchTest status=FAILURE method=SavedSearchTest.savedSearchTest(java.lang.Str...)</span>
+                <span class="method-start">190340 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">savedSearchTest(n, Saved Search Test, https://staging.edinarealtyv2.com/, Minneapolis, MN (City), $300,000, $500,000...)</span>
+                <span class="method-start">190460 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod([TestResult name=savedSearchTest status=SUCCESS method=SavedSearchTest.savedSearchTest(java.lang.Str...)</span>
+                <span class="method-start">190557 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.edinarealty.qa.testcases.SavedPropertiesTest</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">beforeClass(/src/main/java/com/edinarealty/qa/testdata/EdinaRealityDataTable.xlsx)</span>
+                <span class="method-start">190760 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <span class="method-name">savedPropertiesTest(Y, Saved Properties Test, https://staging.edinarealtyv2.com/, Minnetonka, MN (City), $400,000, $600,...)</span>
+                <span class="method-start">190815 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod([TestResult name=savedPropertiesTest status=SUCCESS method=SavedPropertiesTest.savedPropertiesTest(j...)</span>
+                <span class="method-start">260775 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">savedPropertiesTest(n, Saved Properties Test, https://staging.edinarealtyv2.com/, Minneapolis, MN (City), $300,000, $500...)</span>
+                <span class="method-start">260833 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod([TestResult name=savedPropertiesTest status=SUCCESS method=SavedPropertiesTest.savedPropertiesTest(j...)</span>
+                <span class="method-start">260866 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.edinarealty.qa.testcases.SignInTest</div> <!-- chronological-class-name -->
+              <div class="configuration-suite after">
+                <span class="method-name">afterSuite</span>
+                <span class="method-start">260941 ms</span>
+              </div> <!-- configuration-suite after -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+      </div> <!-- main-panel-root -->
+    </div> <!-- wrapper -->
+  </body>
+<script type="text/javascript" src="testng-reports2.js"></script>
+</html>
