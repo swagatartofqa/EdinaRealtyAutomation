@@ -197,7 +197,8 @@ public class LoginPageLocators {
 	protected WebElement FindaHomelink;
 
 
-
+	@FindBy(xpath="//a[contains(text(), 'MyAtlas Milestones')]")
+	protected WebElement milestonePage_navlink;
 
 
 

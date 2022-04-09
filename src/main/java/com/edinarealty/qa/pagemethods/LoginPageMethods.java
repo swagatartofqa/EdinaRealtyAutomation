@@ -594,4 +594,27 @@ public class LoginPageMethods extends LoginPageLocators {
 
 
 	}
+
+    public void refreshPage(int i) {
+		for (int j = 1; j<= i;j++){
+			eDriver.navigate().refresh();
+			genMethods.waitForMilliseconds(5000);
+		}
+
+    }
+
+	public void navigateToMilestonepage() {
+		//Output to the system and report
+		System.out.println("Attempting to Navigate to Milestone Page");
+		reportLogger.log(LogStatus.INFO, "Attempting to Navigate to Milestone Page");
+
+
+		try {
+			Actions actions = new Actions(eDriver);
+			actions.moveToElement(userAccountDropDown).click(milestonePage_navlink).click().perform();
+		} catch (Exception e) {
+
+		}
+		genMethods.waitForMilliseconds(15000);
+	}
 }

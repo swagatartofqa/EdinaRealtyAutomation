@@ -1,6 +1,7 @@
 package com.edinarealty.qa.testcases;
 
 import com.edinarealty.qa.base.TestBase;
+import com.edinarealty.qa.pagemethods.BrokenlinksAndImage;
 import com.edinarealty.qa.pagemethods.LoginPageMethods;
 import com.edinarealty.qa.pagemethods.SearchPageMethods;
 import com.edinarealty.qa.util.ExcelMethods;
@@ -34,6 +35,7 @@ public class VerifyBrokenLinksTest extends TestBase {
         //Setup PageFactory
         loginPageMethods = new LoginPageMethods(eDriver, reportLogger);
         searchPageMethods = new SearchPageMethods(eDriver, reportLogger, excelMethods);
+        brokenlinksAndImage = new BrokenlinksAndImage(eDriver,reportLogger);
     }
 
     //Setup variable(s) and other info for the class
@@ -84,7 +86,7 @@ public class VerifyBrokenLinksTest extends TestBase {
                 loginPageMethods.verifyFailedLoginErrorMessage(checkpoint);
             }
 
-            loginPageMethods.verifyTopLinksHaveValidLinks();
+            brokenlinksAndImage.verifyTopLinksHaveValidLinks();
 
             //Attempt to logout, if desired
             if (signout.equalsIgnoreCase("y") || signout.equalsIgnoreCase("yes")) {
