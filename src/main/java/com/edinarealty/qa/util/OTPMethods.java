@@ -23,28 +23,35 @@ import com.twilio.rest.api.v2010.account.Message;
 
 public class OTPMethods {
 	//Initialize Variable(s)
-	public static final String ACCOUNT_SID = "AC8804e95011bea8ee22be6a95b61568e9";
-	public static final String AUTH_TOKEN = "db6c30635b4d8025c5efa9d38552c981";
+	// +19378844148
+	public static final String ACCOUNT_SID1 = "AC8804e95011bea8ee22be6a95b61568e9";
+	public static final String AUTH_TOKEN1 = "db6c30635b4d8025c5efa9d38552c981";
+
 //	private static final String ACCOUNT_SID = "AC9333f96bc3ec22e9d4f16b8c74ab0809";
 //	private static final String AUTH_TOKEN = "064c920c4fcb927f4f8ac0ea6b65cd4c";
 //	.filter(m -> m.getTo().equals("+19402835138")).map(Message::getBody).findFirst()
-	
+
+	public static final String ACCOUNT_SID = "ACb9a9a2d27b66e419fd5bdfb5fcb91503";
+	public static final String AUTH_TOKEN = "3b9a7d1defeb058f21d23a17fbfa3ec4";
+
+
+
 	public static String getMessage() {
 		return getMessages().filter(m -> m.getDirection().compareTo(Message.Direction.INBOUND) == 0)
-				.filter(m -> m.getTo().equals("+19378844148")).map(Message::getBody).findFirst()
+				.filter(m -> m.getTo().equals("+17579193233")).map(Message::getBody).findFirst()
 				.orElseThrow(IllegalStateException::new);
 	}
-	
+
 	public static Stream<Message> getMessages() {
 		ResourceSet<Message> messages = Message.reader(ACCOUNT_SID).read();
 		return StreamSupport.stream(messages.spliterator(), false);
 	}
-	
+
 	public String outputOTPNumber() {
 		Twilio.init(ACCOUNT_SID, AUTH_TOKEN);
 		String smsBody = getMessage();
 		String OTPNumber = smsBody.replaceAll("[^-?0-9]+", " ");
-		System.out.println(OTPNumber.strip());
-		return OTPNumber.strip();
+		System.out.println(OTPNumber.trim());
+		return OTPNumber.trim();
 	}
 }
